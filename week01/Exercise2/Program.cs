@@ -7,7 +7,16 @@ class Program
         Console.Write("What is your grade percentage? ");
         int percentage = int.Parse(Console.ReadLine());
         string letter = "";
-        
+        string sign = "";
+        int lastDigit = percentage % 10;
+        if (lastDigit >= 7)
+        {
+            sign = "+";
+        }
+        else if (lastDigit <= 3)
+        {
+            sign = "-";
+        }
 
 
         if (percentage >= 90)
@@ -31,7 +40,7 @@ class Program
             letter = "F";
         }
 
-        Console.WriteLine($"Your letter grade is {letter}.");
+        Console.WriteLine($"Your letter grade is {letter}{sign}.");
 
         if (percentage >= 70)
         {
